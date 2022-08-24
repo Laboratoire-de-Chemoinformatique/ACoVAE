@@ -1,0 +1,9 @@
+batch_size: 512
+file_header: false
+internal_dim: 256
+latent_dimensionality: 64
+maximal_smiles_length: 100
+n_epochs: 200
+n_mha_heads: 8
+n_mha_layers: 4
+kld_coefficient: 30
