@@ -1,2 +1,1 @@
-# CVAE_transformer
-
+# ACoVAE
