@@ -21,7 +21,7 @@ A new attention-based conditional variational autoencoder neural network archite
     │   ├── layers.py # Network implementation
     │   └── utils.py # Utilities (SMILESParser class)
     ├── training_data/
-    │   └── chembl23_uniq.smi_fssvm # An example file for training
+    │   └── README.md
     ├── LICENSE # GNU General Public License v3.0 license
     ├── README.md
     ├── main.py
@@ -69,7 +69,7 @@ An example dataset can be downloaded here : https://entrepot.recherche.data.gouv
 ## Model training
 ```bash 
 conda activate ACoVAE
-python3 main.py -i ./training_data/chembl23_uniq.smi_fssvm -m ./model/model_name -mp model_parameters_standard.yaml --log log_19-07-2022
+python3 main.py -i ./training_data/chembl23_umap1.svm -m ./model/model_name -mp model_parameters_standard.yaml --log log_19-07-2022
 ````
 For extended functions, consult the help command:
 
@@ -86,12 +86,12 @@ Select the model which suits your needs in the /model folder.
 
 ## Generate compounds
 First, generate the descriptor vector for a known compound, using ISIDA/Fragmentor.
-**Note** : The first column in the output file must be the ID of the compound, not the SMILES. (see ./training_data/1.smi_fssvm for an example).
+**Note** : The first column in the output file must be the ID of the compound, not the SMILES. (see ./training_data/1.svm for an example).
 
 Then, use the generated vector as seeds for new compounds generation.
 ```bash
 mkdir sampled_smi
-python main.py -f ./training_data/1.smi_fssvm -n 1000 -m ./model/model_name_99_0.98 -sp ./model/model_name_smi_parser.pkl -mp model_parameters_standard.yaml -o ./sampled_smi/known_compound_vector_sampled.smi
+python main.py -f ./training_data/1.svm -n 1000 -m ./model/model_name_99_0.98 -sp ./model/model_name_smi_parser.pkl -mp model_parameters_standard.yaml -o ./sampled_smi/known_compound_vector_sampled.smi
 ```
 - **sp** : SMILES parser pickle object created during the network training. It is needed for sampling.
 - **m** : the model created during the network training.
