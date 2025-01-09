@@ -8,3 +8,6 @@ Please refer to the ISIDA/Fragmentor documentation to generate the descriptor ma
 # Input file format
 - **Column 1** : SMILES
 - **Column 2-end** : Descriptor matrix in a .svm file following the libSVM format. These columns consist in a pair of values separated by a ":". The first value identifies the fragment's index in the header file (.hdr file created by ISIDA/Fragmentor), the second value is the fragment count.
+
+# Download data 
+https://entrepot.recherche.data.gouv.fr/dataset.xhtml?persistentId=doi:10.57745/ILWSLF
